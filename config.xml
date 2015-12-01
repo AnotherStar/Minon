@@ -14,7 +14,8 @@
     </author>
 
     <preference name="fullscreen" value="true" />
-
+	<preference name="load-url-timeout" value="15000" /> 
+	
     <gap:plugin name="org.apache.cordova.vibration" />
 
     <access origin="*"/>
@@ -32,5 +33,6 @@
     </platform>
 
     <access origin="http://debug.phonegap.com" subdomains="true" />
+
 
 </widget>
