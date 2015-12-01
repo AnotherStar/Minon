@@ -1,8 +1,17 @@
-$(document).on('pageinit', function() {
+// document.addEventListener("deviceready", onDeviceReady, false); 
+
+// function onDeviceReady(){
+
+// }
+
+document.addEventListener('deviceready', initialization, false);
+
+function initialization(){
+	alert('initialization');
 	$('#console').text('Ready!');
 	$('#console').append(getAjax());
 	$('#console').append(getAjax());
-});
+};
 
 function getAjax(){
 	var result;
