@@ -1,15 +1,13 @@
-alert('first');
 
 
 $(document).ready(function() {
-	alert('ready');
 	document.addEventListener("deviceready", onDeviceReady(), true);
-	$('#console').text(Date.now);
+	
 });
 
 
 function onDeviceReady(){
-	alert(ajax());
+ajax();
 }
 
 function ajax(data){
@@ -30,6 +28,7 @@ function ajax(data){
 	.always(function() {
 		console.log("complete");
 	});
+	$('#console').text(result);
 	return result;
 }
 
