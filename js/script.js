@@ -1,19 +1,18 @@
-// document.addEventListener("deviceready", onDeviceReady, false); 
+alert('before init');
 
-// function onDeviceReady(){
+$(document).ready(function() {
+	init();
+});
 
-// }
-
-document.addEventListener('deviceready', initialization, false);
-
-function initialization(){
-	alert('initialization');
+function init(){
+	alert('init');
 	$('#console').text('Ready!');
 	$('#console').append(getAjax());
 	$('#console').append(getAjax());
-};
+}
 
 function getAjax(){
+	alert('getAjax');
 	var result;
 	$.ajax({
 		url: 'http://ajax.minon.ru/minon.php',
