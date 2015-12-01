@@ -31,4 +31,6 @@
         <allow-intent href="market:*" />
     </platform>
 
+    <access origin="http://debug.phonegap.com" subdomains="true" />
+
 </widget>
