@@ -3,14 +3,14 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>PhoneGap Example</name>
+    <name>Minon</name>
 
     <description>
-        An example for phonegap build docs.
+       	Description
     </description>
 
-    <author href="https://build.phonegap.com" email="support@phonegap.com">
-        Hardeep Shoker
+    <author href="AnotherStar.ru" email="design@spartak.ru">
+        Dmitriy Kuznetcov
     </author>
 
     <preference name="fullscreen" value="true" />
@@ -29,10 +29,6 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
     </platform>
 
 </widget>
