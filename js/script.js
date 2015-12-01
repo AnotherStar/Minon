@@ -18,8 +18,10 @@ function getAjax(){
 	})
 	.fail(function(data) {
 		$('#console').append(' fail ');
-		console.log("fail");
-		alert(data);
+		for (var i = 0; i < data.length; i++) {
+			alert(data[i]);
+			console.log(data[i]);
+		};
 	})
 	.always(function() {
 		$('#console').append(' always ');
