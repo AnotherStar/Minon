@@ -17,11 +17,7 @@ function getAjax(){
 		result = data;
 	})
 	.fail(function(data) {
-		$('#console').append(' fail ');
-		for (var i = 0; i < data.length; i++) {
-			alert(data[i]);
-			console.log(data[i]);
-		};
+		console.log(data);
 	})
 	.always(function() {
 		$('#console').append(' always ');
