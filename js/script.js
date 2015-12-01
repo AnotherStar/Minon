@@ -1,11 +1,12 @@
-alert('before init');
+alert('before ready');
 
 $(document).ready(function() {
-	init();
+	alert('ready');
+	document.addEventListener('deviceready', init_app, false);
 });
 
-function init(){
-	alert('init');
+function init_app(){
+	alert('init_app');
 	$('#console').text('Ready!');
 	$('#console').append(getAjax());
 	$('#console').append(getAjax());
