@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('pageinit', function() {
 	$('#console').text('Ready!');
 	$('#console').append(getAjax());
 	$('#console').append(getAjax());
