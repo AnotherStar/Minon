@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('#console').text('Ready!');
 	$('#console').append(getAjax());
+	$('#console').append(getAjax());
 });
 
 function getAjax(){
