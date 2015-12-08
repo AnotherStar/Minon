@@ -8,7 +8,6 @@ $(document).ready(function() {
 
 function onDeviceReady(){
 	ajax();
-	initPushwoosh();
 }
 
 function ajax(data){
