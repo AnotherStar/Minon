@@ -36,6 +36,8 @@ function ajax(data){
 function initPushwoosh()
 {
     var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+    
+    console.log(pushNotification);
  
     //set push notifications handler
     document.addEventListener('push-notification', function(event) {
