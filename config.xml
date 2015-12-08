@@ -13,7 +13,8 @@
         Dmitriy Kuznetcov
     </author>
 
-    <preference name="fullscreen" value="true" />
+    <!-- <preference name="fullscreen" value="true" /> -->
+    
 	<preference name="load-url-timeout" value="15000" /> 
 	
     <gap:plugin name="org.apache.cordova.vibration" />
@@ -26,10 +27,10 @@
     <preference name="com.urbanairship.development_app_key" value="p5ZqjySkTBe2QhHLXclN_Q" />
     <preference name="com.urbanairship.development_app_secret" value="y3cM6uiCQSSeKkdUctG9bg" />
 
-
-
     <!-- If the app is in production or not -->
     <preference name="com.urbanairship.in_production" value="false" />
+    <preference name="com.urbanairship.developmentLogLevel" value="DEBUG" />
+    <preference name="com.urbanairship.productionLogLevel" value="ERROR" />
 
     <!-- Enable push when the application launches (instead of waiting for enablePush js call).  Defaults to false -->
     <preference name="com.urbanairship.enable_push_onlaunch" value="true" />
