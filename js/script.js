@@ -7,8 +7,8 @@ $(document).ready(function() {
 
 
 function onDeviceReady(){
-ajax();
-initPushwoosh();
+	ajax();
+	initPushwoosh();
 }
 
 function ajax(data){
@@ -33,37 +33,40 @@ function ajax(data){
 	return result;
 }
 
-function initPushwoosh()
-{
-    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
-    
-    console.log(pushNotification);
- 
-    //set push notifications handler
-    document.addEventListener('push-notification', function(event) {
-        var title = event.notification.title;
-        var userData = event.notification.userdata;
-                                 
-        if(typeof(userData) != "undefined") {
-            console.warn('user data: ' + JSON.stringify(userData));
-        }
-                                     
-        alert(title);
+// Register for any urban airship events
+document.addEventListener("urbanairship.registration", function (event) {
+    if (event.error) {
+        console.log('there was an error registering for push notifications');
+    } else {
+        console.log("Registered with ID: " + event.pushID);
+    } 
+}, false)
+
+document.addEventListener("urbanairship.push", function (event) {
+    console.log("Incoming push: " + event.message)
+}, false)
+
+// Set tags on a device, that you can push to
+// https://docs.urbanairship.com/display/DOCS/Server%3A+Tag+API
+PushNotification.setTags(["loves_cats", "shops_for_games"], function () {
+    PushNotification.getTags(function (obj) {
+        obj.tags.forEach(function (tag) {
+            console.log("Tag: " + tag);
+        });
     });
- 
-    //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_NUMBER", pw_appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-    pushNotification.onDeviceReady({ projectid: "862592340817", pw_appid : "FCBA5-CAA7F" });
- 
-    //register for pushes
-    pushNotification.registerDevice(
-        function(status) {
-            var pushToken = status;
-            console.warn('push token: ' + pushToken);
-        },
-        function(status) {
-            console.warn(JSON.stringify(['failed to register ', status]));
-        }
-    );
-}
+});
 
+// Set an alias, this lets you tie a device to a user in your system
+// https://docs.urbanairship.com/display/DOCS/Server%3A+iOS+Push+API#ServeriOSPushAPI-Alias
+PushNotification.setAlias("awesomeuser22", function () {
+    PushNotification.getAlias(function (alias) {
+        console.log("The user formerly known as " + alias)
+    });
+});
 
+// Check if push is enabled
+PushNotification.isPushEnabled(function (enabled) {
+    if (enabled) {
+        console.log("Push is enabled! Fire away!");
+    }
+})

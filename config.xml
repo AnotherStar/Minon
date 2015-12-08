@@ -18,7 +18,24 @@
 	
     <gap:plugin name="org.apache.cordova.vibration" />
 
-    <plugin name="com.pushwoosh.plugins.pushwoosh" spec="3.4.2" source="pgb" />
+    <plugin name="com.urbanairship.phonegap.pushnotification" spec="2.7.0" source="pgb" />
+
+    <!-- Urban Airship app credentials -->
+<!--     <preference name="com.urbanairship.production_app_key" value="PRODUCTION_APP_KEY" />
+    <preference name="com.urbanairship.production_app_secret" value="PRODUCTION_APP_SECRET" /> -->
+    <preference name="com.urbanairship.development_app_key" value="p5ZqjySkTBe2QhHLXclN_Q" />
+    <preference name="com.urbanairship.development_app_secret" value="y3cM6uiCQSSeKkdUctG9bg" />
+
+
+
+    <!-- If the app is in production or not -->
+    <preference name="com.urbanairship.in_production" value="false" />
+
+    <!-- Enable push when the application launches (instead of waiting for enablePush js call).  Defaults to false -->
+    <preference name="com.urbanairship.enable_push_onlaunch" value="true" />
+
+    <!-- Only required for Android. -->
+    <preference name="com.urbanairship.gcm_sender" value="AIzaSyDAwfGsah3hYHP7C4Jiw1MDLbYrljTnZc8" />
 
     <access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
