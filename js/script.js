@@ -1,4 +1,4 @@
-var rithm = 120;
+var rithm = 60;
 
 $(document).ready(function() {
 	document.addEventListener("deviceready", onDeviceReady(), true);
@@ -57,7 +57,7 @@ function heartBeat(){
 	navigator.vibrate([b1, w1, b2]);
 	setTimeout(function(){
 		heartBeat(rithm);
-	}, w2);
+	}, b1 + w1 + b2 + w2);
 
 }
 
