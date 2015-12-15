@@ -1,8 +1,12 @@
-
+var rithm = 80;
 
 $(document).ready(function() {
 	document.addEventListener("deviceready", onDeviceReady(), true);
-	
+	$('#rithm').on('change', function(){
+		rithm = $('#rithm').val();
+		$('#rithm_text').text(rithm);
+	})
+	heartBeat();
 });
 
 
@@ -30,6 +34,20 @@ function ajax(){
 	});
 	$('#console').text(result);
 	return result;
+}
+
+function heartBeat(){
+
+	var time = 60*1000/rithm;
+	var b1 = .2 * time;
+	var w1 = .15 * time;
+	var b2 = .1 * time;
+	var w2 = .55 * time;
+	navigator.vibrate([b1, w1, b2]);
+	setTimeout(function(){
+		heartBeat(rithm);
+	}, w2);
+
 }
 
 // Register for any urban airship events
