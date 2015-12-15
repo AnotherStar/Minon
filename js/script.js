@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 
 function onDeviceReady(){
-	ajax();
+	//ajax();
 }
 
 function ajax(){
