@@ -1,4 +1,4 @@
-var rithm = 80;
+var rithm = 120;
 
 $(document).ready(function() {
 	document.addEventListener("deviceready", onDeviceReady(), true);
@@ -38,11 +38,22 @@ function ajax(){
 
 function heartBeat(){
 
-	var time = 60*1000/rithm;
-	var b1 = .2 * time;
-	var w1 = .15 * time;
-	var b2 = .1 * time;
-	var w2 = .55 * time;
+	var time = rithm * 1000/60;
+	//time = time * Math.random;
+	time = time + (Math.random() * time *.1) - time *.05;
+	var b1 = 100;
+	var w1 = 150;
+	var b2 = 50;
+	var w2 = 700;
+
+	var q = (b1 + w1 + b2 + w2)/time;
+
+	b1 = b1 * q;
+	w1 = w1 * q;
+	b2 = b2 * q;
+	w2 = w2 * q;
+
+	console.log(b1 + ' ' + w1 + ' ' + b2 + ' ' + w2);
 	navigator.vibrate([b1, w1, b2]);
 	setTimeout(function(){
 		heartBeat(rithm);
