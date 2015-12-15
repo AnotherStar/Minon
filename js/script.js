@@ -2,10 +2,6 @@ var rithm = 60;
 
 $(document).ready(function() {
 	document.addEventListener("deviceready", onDeviceReady(), true);
-	$('#rithm').on('change', function(){
-		rithm = $('#rithm').val();
-		$('#rithm_text').text(rithm);
-	})
 	heartBeat();
 });
 
@@ -37,6 +33,9 @@ function ajax(){
 }
 
 function heartBeat(){
+
+	rithm = $('#rithm').val();
+	$('#rithm_text').text(rithm);
 
 	var time = rithm * 1000/60;
 	//time = time * Math.random;
